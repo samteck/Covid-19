@@ -1,11 +1,10 @@
 Here is a list od commands used in this project
 
-AT                         : test if module connected successfully
-AT+CWMODE=1                : set mode to station
-AT+CWJAP="Samarth","9717234045" : connects to AP
-AT+CIPMUX=1                : enable multiple connections 1=true (4 max)
+AT                              : test if module connected successfully
+AT+CWMODE=1                     : set mode to station
+AT+CWJAP="ssid","password"      : connects to AP
+AT+CIPMUX=1                     : enable multiple connections 1=true (4 max)
 AT+CIPSTART=0,"TCP","corona.lmao.ninja",443           : start tcp connection with id:0, lenght of data
-AT+CIPSEND=0,24            :send the data with id 0 and length 24
-data = GET /HTTPS/1.1/ countries/india\r\n
-AT+CIPCLOSE=0              :close connection with id:0
-
+AT+CIPSEND=0,24                 :send the data with id 0 and length 24
+data = GET /countries/india HTTP/1.1\r\n Host: corona.lmao.ninja\r\n
+AT+CIPCLOSE=0                   :close connection with id:0
