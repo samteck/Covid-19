@@ -1,7 +1,7 @@
 {
-    "sketch": "src/main.ino",
+    "sketch": "src/Sample-Code/lcd-sample.ino",
     "programmer": "AVR ISP",
     "board": "arduino:avr:uno",
-    "port": "/dev/tty.usbmodem14101",
+    "port": "/dev/tty.usbmodem14201",
     "output": "build"
 }
