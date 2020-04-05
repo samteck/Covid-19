@@ -36,6 +36,7 @@ void setup() {
 
   // set the data rate for the SoftwareSerial port
   esp8266.begin(9600);
+  initialScreen();
 }
 
 void loop() { // run over and over
@@ -72,12 +73,68 @@ void getdata(){
 
 void show_cases(int value){
   Serial.println(value);
+  lcd.setCursor(0,1);
+  lcd.print(value);
 }
 
 void show_death(int value){
   Serial.println(value);
+  lcd.setCursor(7,1);
+  lcd.print(value);
 }
 
 void show_well(int value){
   Serial.println(value);
+  lcd.setCursor(13,1);
+  lcd.print(value);
+}
+
+void initialScreen(){
+  int i=0;
+  lcd.clear();
+  lcd.setCursor(3,0);
+  lcd.print("COVID - 19");
+  lcd.setCursor(0,1);
+  lcd.print("Status and Alert"); 
+  delay(5000);
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("CASES");
+  lcd.setCursor(6,0);
+  lcd.print("DEATH");
+  lcd.setCursor(12,0);
+  lcd.print("WELL");
+  // lcd.setCursor(0,0);
+  // lcd.print("LOADING BOOTSTRAP");
+  // lcd.setCursor(0,1);
+  // for(i=0;i<20;i++){
+  //     lcd.print(".");
+  //     delay(150);
+  // }
+  // lcd.setCursor(0,2);
+  // lcd.print("LOADING NCC. FILES");
+  // lcd.setCursor(0,3);
+  // for(i=0;i<20;i++){
+  //     lcd.print(".");
+  //     delay(100);
+  // }
+  // delay(1000);
+  
+  // for(i=0;i<=100;i++){
+  //   lcd.clear();
+  //   lcd.setCursor(0,0);
+  //   lcd.print("Initializing .......");
+  //   lcd.setCursor(0,1);
+  //   lcd.print("PIR Sensors");
+  //   lcd.setCursor(0,2);
+  //   lcd.print(i);
+  //   lcd.print("%");
+  //   delay(50);
+  // }
+  // lcd.setCursor(8,2);
+  // lcd.print("--OK DONE--");
+  // delay(500);
+  // lcd.setCursor(0,3);
+  // lcd.print("LOADING START SCREEN");
+  // delay(1500);
 }
