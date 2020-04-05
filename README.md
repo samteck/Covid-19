@@ -8,14 +8,14 @@ Also, if there is a increase in the number of cases we will hava a buzzer that w
 We are using below API which return details of coronavirus cases in particular country
 **https://corona.lmao.ninja/countries/:country** 
 
-## Revision 2.0 ##
+## Revision 2.x ##
 In this reviosn we will use Arduino to control LCD display and ESP8266 to make HTTPS connection to Public API to get data. The ESP8266 will send the JSON string to Arduino via Serial. Arduino will convert that string to Char array and use ArduinoJson library to parse the Json string.
 
 <img src="https://github.com/samteck/Covid-19/blob/master/diagrams/REV2.0-Architecture.png" width="700">
 
 
 
-## Revision 1.0 ##
+## Revision 1.x ##
 In this reviosn we will use Arduino as a Host MCU and esp8266 as wifi module. We will communicate with esp8266 via AT commands.
 
 <img src="https://github.com/samteck/Covid-19/blob/master/diagrams/REV1.0-Architecture.png" width="700">
